@@ -1,0 +1,7 @@
+# Normalise line endings of text files; keep MATLAB binaries untouched.
+* text=auto
+*.m   text diff=matlab
+*.fig binary
+*.mat binary
+*.mlx binary
+*.png binary

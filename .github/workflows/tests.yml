@@ -1,0 +1,28 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: MATLAB ${{ matrix.release }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # Oldest supported release and the newest one.
+        release: [R2021a, latest]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: matlab-actions/setup-matlab@v2
+        with:
+          release: ${{ matrix.release }}
+
+      - uses: matlab-actions/run-tests@v2
+        with:
+          source-folder: .
+          select-by-folder: tests

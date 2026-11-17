@@ -1,0 +1,17 @@
+# MATLAB autosave, backup and editor files
+*.asv
+*.m~
+*.autosave
+*.slxc
+*.mex*
+slprj/
+codegen/
+
+# Test and coverage output
+test-results/
+code-coverage/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
